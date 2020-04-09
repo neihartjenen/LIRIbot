@@ -9,7 +9,7 @@ var spotify = new Spotify(keys.spotify);
 var command = process.argv[2]
 var keyword = process.argv[3]
 
-function search() {
+function searchBands() {
   log()
   if (command === "concert-this") {
     var artist =  keyword
@@ -85,3 +85,10 @@ fs.readFile("random.txt", "utf8", function (error, data) {
     if (error) {
         return console.log(error)
     };
+    
+    var textArr = data.split(",");
+        userCommand = textArr[0];
+        userInput = textArr[1];
+        runLiri();
+    })
+}
