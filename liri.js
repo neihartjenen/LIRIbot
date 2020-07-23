@@ -88,6 +88,9 @@ function getOMDB(movie) {
   
         var logMovie = "\r\n" + "======== Begin movie-this log  =======" + "\r\n" + "\nMovie title: " + response.data.Title + "\nYear released: " + response.data.Year + "\nIMDB Rating: " + response.data.imdbRating + "\nRotten Tomatoes Rating: " + response.data.Ratings[1].Value + "\nCountry Where Produced: " + response.data.Country + "\nLanguage: " + response.data.Language + "\nPlot: " + response.data.Plot + "\nActors: " + response.data.Actors + "\r\n" + "\n========= End movie-this log  ======" + "\r\n";
   
+        fs.appendFile("log.txt", logMovie, function (err) {
+            if (err) throw err;
+        });
   });
   };
   
