@@ -1,5 +1,5 @@
 {
-  "name": "LIRIbot",
+  "name": "liri-node-app",
   "version": "1.0.0",
   "description": "LIRI Bot",
   "main": "index.js",
@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/neihartjenen/LIRIbot/issues"
   },
-  "homepage": "https://github.com/neihartjenen/LIRIbot#readme"
+  "homepage": "https://github.com/neihartjenen/LIRIbot#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "dotenv": "^8.2.0",
+    "moment": "^2.27.0",
+    "node-spotify-api": "^1.1.1"
+  }
 }
