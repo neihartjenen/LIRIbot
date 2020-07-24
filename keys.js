@@ -1,7 +1,6 @@
-// console.log('this is loaded');
+//console.log('this is loaded');
 
 // Spotify API
-
 
 exports.spotify = {
   id: process.env.SPOTIFY_ID,

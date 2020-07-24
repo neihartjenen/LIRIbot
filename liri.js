@@ -1,10 +1,10 @@
 require("dotenv").config();
 
+var keys = require("./keys");
 var axios = require("axios");
 var moment = require("moment");
-var keys = require("./keys");
-var Spotify = require("node-spotify-api")
-var dotenv = require("dotenv")
+var Spotify = require("node-spotify-api");
+var dotenv = require("dotenv");
 var fs = require("fs");
 
 
@@ -53,7 +53,7 @@ function getSpotify(songName) {
       // Returns Album name
       console.log("Album: " + data.tracks.items[0].album.name + "\r\n");
   
-     //  Puts Results in txt file
+     //  Puts results in text file
       var logSong = "\r\n" + "===== Begin spotify-this log =====" + "\r\n" + "\nArtist: " + data.tracks.items[0].album.artists[0].name + "\r\n" + "\nSong Name: " + data.tracks.items[0].name + "\r\n" +  "\nSong Preview Link: " + data.tracks.items[0].href + "\r\n" +  "\nAlbum: " + data.tracks.items[0].album.name + "\r\n" + "\n===== End spotify-this log ====" + "\r\n";
   
       fs.appendFile("log.txt", logSong, function(err) {
@@ -94,5 +94,17 @@ function getOMDB(movie) {
   });
   };
   
+  function getRandom() {
+    fs.readFile("random.txt", "utf8", function (error, data) {
+      if (error) {
+        return console.log(error);
+      } else {
+        console.log(data);
+  
+        var randomData = data.split(",");
+        liriBot(randomData[0], randomData[1]);
+      }
+    });
+  };
 
 liriBot(request, userInput)
