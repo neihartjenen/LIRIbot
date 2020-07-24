@@ -6,4 +6,5 @@ Commands are the following:
 
 node liri.js spotify-this
 node liri.js movie-this
+node liri.js concert-this
 node liri.js do-whatever
