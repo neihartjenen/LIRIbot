@@ -149,6 +149,4 @@ function getOMDB(movie) {
   };
   
   
-
-
 liriBot(request, userInput)
